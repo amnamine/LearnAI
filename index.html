@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Learning Roadmap</title>
+    <title>LearnAI - Complete AI Learning Platform</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -15,9 +15,23 @@
             <div class="header-content">
                 <h1 class="main-title">
                     <i class="fas fa-robot"></i>
-                    AI Learning Roadmap
+                    LearnAI
                 </h1>
-                <p class="subtitle">Your journey to mastering Artificial Intelligence</p>
+                <p class="subtitle">Your Complete Guide to Mastering Artificial Intelligence</p>
+                <div class="header-stats">
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Learning Resources</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Learning Levels</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">External Links</span>
+                    </div>
+                </div>
             </div>
         </header>
 
@@ -25,7 +39,11 @@
         <nav class="nav-tabs">
             <button class="nav-tab active" data-tab="roadmap">
                 <i class="fas fa-route"></i>
-                Roadmap
+                Learning Roadmap
+            </button>
+            <button class="nav-tab" data-tab="concepts">
+                <i class="fas fa-brain"></i>
+                AI Concepts
             </button>
             <button class="nav-tab" data-tab="resources">
                 <i class="fas fa-book"></i>
@@ -33,13 +51,20 @@
             </button>
             <button class="nav-tab" data-tab="tools">
                 <i class="fas fa-tools"></i>
-                AI Tools
+                AI Tools & Platforms
+            </button>
+            <button class="nav-tab" data-tab="projects">
+                <i class="fas fa-code"></i>
+                Projects & Practice
             </button>
         </nav>
 
-        <!-- Roadmap Section -->
+        <!-- Learning Roadmap Section -->
         <section id="roadmap" class="content-section active">
             <div class="roadmap-container">
+                <h2 class="section-title">Complete AI Learning Roadmap</h2>
+                <p class="section-description">Follow this comprehensive roadmap to master AI from beginner to expert level</p>
+                
                 <div class="roadmap-path">
                     <!-- Foundation Level -->
                     <div class="roadmap-level foundation">
@@ -47,25 +72,52 @@
                             <div class="level-icon">
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
-                            <h2>Foundation</h2>
+                            <div class="level-info">
+                                <h2>Foundation (2-3 months)</h2>
+                                <p>Build strong mathematical and programming foundations</p>
+                            </div>
                             <span class="level-duration">2-3 months</span>
                         </div>
                         <div class="level-content">
                             <div class="skill-card">
-                                <h3>Mathematics</h3>
+                                <h3><i class="fas fa-calculator"></i> Mathematics</h3>
+                                <div class="explanation-card">
+                                    <h4>Why Mathematics is Essential</h4>
+                                    <p>Mathematics forms the backbone of AI algorithms. Understanding linear algebra, calculus, and statistics is crucial for implementing and understanding machine learning models.</p>
+                                </div>
                                 <ul>
-                                    <li>Linear Algebra</li>
-                                    <li>Calculus</li>
-                                    <li>Statistics & Probability</li>
+                                    <li><strong>Linear Algebra:</strong> Vectors, matrices, eigenvalues, eigenvectors</li>
+                                    <li><strong>Calculus:</strong> Derivatives, gradients, optimization</li>
+                                    <li><strong>Statistics & Probability:</strong> Distributions, hypothesis testing, Bayesian inference</li>
                                 </ul>
+                                <div class="learning-path">
+                                    <h4>Learning Path:</h4>
+                                    <ul>
+                                        <li>Khan Academy Linear Algebra</li>
+                                        <li>3Blue1Brown Essence of Linear Algebra</li>
+                                        <li>MIT OpenCourseWare Statistics</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="skill-card">
-                                <h3>Programming</h3>
+                                <h3><i class="fas fa-code"></i> Programming</h3>
+                                <div class="explanation-card">
+                                    <h4>Python for AI Development</h4>
+                                    <p>Python is the de facto language for AI development. Master Python fundamentals and key libraries for data science and machine learning.</p>
+                                </div>
                                 <ul>
-                                    <li>Python Basics</li>
-                                    <li>Data Structures</li>
-                                    <li>NumPy & Pandas</li>
+                                    <li><strong>Python Basics:</strong> Variables, functions, classes, modules</li>
+                                    <li><strong>Data Structures:</strong> Lists, dictionaries, sets, tuples</li>
+                                    <li><strong>Key Libraries:</strong> NumPy, Pandas, Matplotlib, Seaborn</li>
                                 </ul>
+                                <div class="learning-path">
+                                    <h4>Learning Path:</h4>
+                                    <ul>
+                                        <li>Python.org Official Tutorial</li>
+                                        <li>Real Python Advanced Python</li>
+                                        <li>Pandas Documentation</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -76,25 +128,52 @@
                             <div class="level-icon">
                                 <i class="fas fa-seedling"></i>
                             </div>
-                            <h2>Beginner</h2>
+                            <div class="level-info">
+                                <h2>Beginner (3-4 months)</h2>
+                                <p>Learn machine learning fundamentals and data science</p>
+                            </div>
                             <span class="level-duration">3-4 months</span>
                         </div>
                         <div class="level-content">
                             <div class="skill-card">
-                                <h3>Machine Learning</h3>
+                                <h3><i class="fas fa-chart-line"></i> Machine Learning</h3>
+                                <div class="explanation-card">
+                                    <h4>Understanding Machine Learning</h4>
+                                    <p>Machine learning is the core of AI. Learn how algorithms can learn patterns from data to make predictions and decisions.</p>
+                                </div>
                                 <ul>
-                                    <li>Supervised Learning</li>
-                                    <li>Unsupervised Learning</li>
-                                    <li>Model Evaluation</li>
+                                    <li><strong>Supervised Learning:</strong> Regression, classification algorithms</li>
+                                    <li><strong>Unsupervised Learning:</strong> Clustering, dimensionality reduction</li>
+                                    <li><strong>Model Evaluation:</strong> Cross-validation, metrics, overfitting</li>
                                 </ul>
+                                <div class="learning-path">
+                                    <h4>Learning Path:</h4>
+                                    <ul>
+                                        <li>Andrew Ng's Machine Learning Course</li>
+                                        <li>Scikit-learn Documentation</li>
+                                        <li>Hands-On Machine Learning Book</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="skill-card">
-                                <h3>Data Science</h3>
+                                <h3><i class="fas fa-database"></i> Data Science</h3>
+                                <div class="explanation-card">
+                                    <h4>Data Science Fundamentals</h4>
+                                    <p>Data science is about extracting insights from data. Learn data preprocessing, analysis, and visualization techniques.</p>
+                                </div>
                                 <ul>
-                                    <li>Data Preprocessing</li>
-                                    <li>Exploratory Data Analysis</li>
-                                    <li>Data Visualization</li>
+                                    <li><strong>Data Preprocessing:</strong> Cleaning, transformation, feature engineering</li>
+                                    <li><strong>Exploratory Data Analysis:</strong> EDA, statistical analysis</li>
+                                    <li><strong>Data Visualization:</strong> Charts, plots, interactive dashboards</li>
                                 </ul>
+                                <div class="learning-path">
+                                    <h4>Learning Path:</h4>
+                                    <ul>
+                                        <li>Kaggle Learn Data Science</li>
+                                        <li>Python for Data Analysis Book</li>
+                                        <li>Tableau Public for Visualization</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -105,25 +184,52 @@
                             <div class="level-icon">
                                 <i class="fas fa-brain"></i>
                             </div>
-                            <h2>Intermediate</h2>
+                            <div class="level-info">
+                                <h2>Intermediate (4-6 months)</h2>
+                                <p>Master deep learning and specialized AI domains</p>
+                            </div>
                             <span class="level-duration">4-6 months</span>
                         </div>
                         <div class="level-content">
                             <div class="skill-card">
-                                <h3>Deep Learning</h3>
+                                <h3><i class="fas fa-network-wired"></i> Deep Learning</h3>
+                                <div class="explanation-card">
+                                    <h4>Deep Learning Revolution</h4>
+                                    <p>Deep learning has revolutionized AI with neural networks that can learn complex patterns. Master the frameworks and architectures that power modern AI.</p>
+                                </div>
                                 <ul>
-                                    <li>Neural Networks</li>
-                                    <li>CNN & RNN</li>
-                                    <li>TensorFlow/PyTorch</li>
+                                    <li><strong>Neural Networks:</strong> Perceptrons, backpropagation, activation functions</li>
+                                    <li><strong>CNN & RNN:</strong> Convolutional and recurrent neural networks</li>
+                                    <li><strong>Frameworks:</strong> TensorFlow, PyTorch, Keras</li>
                                 </ul>
+                                <div class="learning-path">
+                                    <h4>Learning Path:</h4>
+                                    <ul>
+                                        <li>Deep Learning Specialization (Coursera)</li>
+                                        <li>Fast.ai Practical Deep Learning</li>
+                                        <li>PyTorch Official Tutorials</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="skill-card">
-                                <h3>NLP</h3>
+                                <h3><i class="fas fa-language"></i> Natural Language Processing</h3>
+                                <div class="explanation-card">
+                                    <h4>Understanding NLP</h4>
+                                    <p>NLP enables computers to understand, interpret, and generate human language. Learn the techniques that power chatbots, translation, and text analysis.</p>
+                                </div>
                                 <ul>
-                                    <li>Text Processing</li>
-                                    <li>Word Embeddings</li>
-                                    <li>Transformers</li>
+                                    <li><strong>Text Processing:</strong> Tokenization, stemming, lemmatization</li>
+                                    <li><strong>Word Embeddings:</strong> Word2Vec, GloVe, FastText</li>
+                                    <li><strong>Transformers:</strong> BERT, GPT, attention mechanisms</li>
                                 </ul>
+                                <div class="learning-path">
+                                    <h4>Learning Path:</h4>
+                                    <ul>
+                                        <li>CS224N Stanford NLP Course</li>
+                                        <li>Hugging Face Transformers</li>
+                                        <li>NLTK and spaCy Documentation</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -134,25 +240,52 @@
                             <div class="level-icon">
                                 <i class="fas fa-rocket"></i>
                             </div>
-                            <h2>Advanced</h2>
+                            <div class="level-info">
+                                <h2>Advanced (6+ months)</h2>
+                                <p>Specialize in cutting-edge AI domains and production deployment</p>
+                            </div>
                             <span class="level-duration">6+ months</span>
                         </div>
                         <div class="level-content">
                             <div class="skill-card">
-                                <h3>Specialization</h3>
+                                <h3><i class="fas fa-eye"></i> Computer Vision</h3>
+                                <div class="explanation-card">
+                                    <h4>Computer Vision Applications</h4>
+                                    <p>Computer vision enables machines to interpret visual information. Learn the techniques behind image recognition, object detection, and medical imaging.</p>
+                                </div>
                                 <ul>
-                                    <li>Computer Vision</li>
-                                    <li>Reinforcement Learning</li>
-                                    <li>Generative AI</li>
+                                    <li><strong>Image Classification:</strong> CNNs, transfer learning, data augmentation</li>
+                                    <li><strong>Object Detection:</strong> YOLO, R-CNN, SSD</li>
+                                    <li><strong>Medical Imaging:</strong> DICOM, segmentation, diagnosis</li>
                                 </ul>
+                                <div class="learning-path">
+                                    <h4>Learning Path:</h4>
+                                    <ul>
+                                        <li>CS231n Stanford Computer Vision</li>
+                                        <li>OpenCV Documentation</li>
+                                        <li>Medical Image Analysis Projects</li>
+                                    </ul>
+                                </div>
                             </div>
                             <div class="skill-card">
-                                <h3>Production</h3>
+                                <h3><i class="fas fa-cogs"></i> MLOps & Production</h3>
+                                <div class="explanation-card">
+                                    <h4>Deploying AI in Production</h4>
+                                    <p>MLOps bridges the gap between data science and production. Learn how to deploy, monitor, and maintain AI systems at scale.</p>
+                                </div>
                                 <ul>
-                                    <li>MLOps</li>
-                                    <li>Model Deployment</li>
-                                    <li>Cloud Platforms</li>
+                                    <li><strong>Model Deployment:</strong> Docker, Kubernetes, cloud platforms</li>
+                                    <li><strong>MLOps:</strong> CI/CD, monitoring, versioning</li>
+                                    <li><strong>Cloud Platforms:</strong> AWS, GCP, Azure ML services</li>
                                 </ul>
+                                <div class="learning-path">
+                                    <h4>Learning Path:</h4>
+                                    <ul>
+                                        <li>MLOps Specialization (Coursera)</li>
+                                        <li>AWS Machine Learning</li>
+                                        <li>Kubeflow Documentation</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -160,124 +293,284 @@
             </div>
         </section>
 
-        <!-- Resources Section -->
+        <!-- AI Concepts Section -->
+        <section id="concepts" class="content-section">
+            <div class="concepts-container">
+                <h2 class="section-title">Understanding AI Concepts</h2>
+                <p class="section-description">Deep dive into the fundamental concepts that power artificial intelligence</p>
+                
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3><i class="fas fa-brain"></i> What is Artificial Intelligence?</h3>
+                        <div class="explanation-card">
+                            <p><strong>Artificial Intelligence (AI)</strong> refers to the simulation of human intelligence in machines that are programmed to think and learn like humans. AI systems can perform tasks that typically require human intelligence, such as visual perception, speech recognition, decision-making, and language translation.</p>
+                        </div>
+                        <h4>Key Characteristics:</h4>
+                        <ul>
+                            <li><strong>Learning:</strong> Ability to improve performance through experience</li>
+                            <li><strong>Reasoning:</strong> Capacity to solve problems and make decisions</li>
+                            <li><strong>Perception:</strong> Understanding and interpreting sensory input</li>
+                            <li><strong>Adaptation:</strong> Adjusting behavior based on new information</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-chart-line"></i> Machine Learning vs Deep Learning</h3>
+                        <div class="explanation-card">
+                            <p><strong>Machine Learning</strong> is a subset of AI that enables computers to learn and make decisions from data without being explicitly programmed. <strong>Deep Learning</strong> is a subset of machine learning that uses neural networks with multiple layers to model and understand complex patterns.</p>
+                        </div>
+                        <h4>Key Differences:</h4>
+                        <ul>
+                            <li><strong>Data Requirements:</strong> Deep learning needs large datasets</li>
+                            <li><strong>Feature Engineering:</strong> ML requires manual feature extraction</li>
+                            <li><strong>Performance:</strong> Deep learning often achieves better accuracy</li>
+                            <li><strong>Interpretability:</strong> Traditional ML is more interpretable</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-network-wired"></i> Neural Networks Explained</h3>
+                        <div class="explanation-card">
+                            <p><strong>Neural Networks</strong> are computing systems inspired by biological neural networks. They consist of interconnected nodes (neurons) that process information and learn patterns through training.</p>
+                        </div>
+                        <h4>Components:</h4>
+                        <ul>
+                            <li><strong>Input Layer:</strong> Receives raw data</li>
+                            <li><strong>Hidden Layers:</strong> Process and transform data</li>
+                            <li><strong>Output Layer:</strong> Produces final predictions</li>
+                            <li><strong>Weights & Biases:</strong> Parameters learned during training</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-robot"></i> Types of AI Systems</h3>
+                        <div class="explanation-card">
+                            <p>AI systems can be categorized based on their capabilities and complexity. Understanding these categories helps in choosing the right approach for different problems.</p>
+                        </div>
+                        <h4>AI Categories:</h4>
+                        <ul>
+                            <li><strong>Narrow AI:</strong> Specialized for specific tasks (Siri, Alexa)</li>
+                            <li><strong>General AI:</strong> Human-like intelligence across domains</li>
+                            <li><strong>Super AI:</strong> Surpasses human intelligence</li>
+                            <li><strong>Reactive AI:</strong> Responds to current situations</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-database"></i> Data in AI</h3>
+                        <div class="explanation-card">
+                            <p>Data is the fuel that powers AI systems. The quality, quantity, and diversity of data directly impact the performance of AI models. Understanding data is crucial for successful AI projects.</p>
+                        </div>
+                        <h4>Data Types:</h4>
+                        <ul>
+                            <li><strong>Structured Data:</strong> Organized in tables (CSV, databases)</li>
+                            <li><strong>Unstructured Data:</strong> Text, images, audio, video</li>
+                            <li><strong>Semi-structured Data:</strong> JSON, XML formats</li>
+                            <li><strong>Real-time Data:</strong> Streaming data for live predictions</li>
+                        </ul>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3><i class="fas fa-shield-alt"></i> AI Ethics and Bias</h3>
+                        <div class="explanation-card">
+                            <p>As AI becomes more prevalent, understanding its ethical implications is crucial. AI systems can perpetuate or amplify biases present in training data, leading to unfair outcomes.</p>
+                        </div>
+                        <h4>Key Considerations:</h4>
+                        <ul>
+                            <li><strong>Bias Detection:</strong> Identifying unfair treatment in AI systems</li>
+                            <li><strong>Fairness:</strong> Ensuring equitable outcomes for all groups</li>
+                            <li><strong>Transparency:</strong> Making AI decisions explainable</li>
+                            <li><strong>Privacy:</strong> Protecting personal data in AI systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Resources Section -->
         <section id="resources" class="content-section">
             <div class="resources-container">
-                <h2 class="section-title">Learning Resources</h2>
+                <h2 class="section-title">Comprehensive Learning Resources</h2>
+                <p class="section-description">Curated collection of the best AI learning materials from around the web</p>
                 
-                <div class="resource-category">
-                    <h3><i class="fas fa-play-circle"></i> Online Courses</h3>
-                    <div class="resource-grid">
-                        <a href="https://www.coursera.org/learn/machine-learning" target="_blank" class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fas fa-graduation-cap"></i>
-                            </div>
-                            <h4>Machine Learning - Stanford</h4>
-                            <p>Andrew Ng's famous course on Coursera</p>
-                            <span class="resource-type">Free</span>
+                <!-- Online Courses -->
+                <div class="resource-category-extended">
+                    <h3><i class="fas fa-play-circle"></i> Online Courses & MOOCs</h3>
+                    <div class="extended-resource-grid">
+                        <a href="https://www.coursera.org/learn/machine-learning" target="_blank" class="extended-resource-card">
+                            <h4>Machine Learning - Stanford University</h4>
+                            <p>Andrew Ng's legendary course that has taught millions. Covers supervised and unsupervised learning, neural networks, and practical applications.</p>
+                            <span class="resource-badge free">Free</span>
                         </a>
                         
-                        <a href="https://www.deeplearning.ai/" target="_blank" class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
+                        <a href="https://www.deeplearning.ai/" target="_blank" class="extended-resource-card">
                             <h4>Deep Learning Specialization</h4>
-                            <p>Comprehensive deep learning course</p>
-                            <span class="resource-type">Paid</span>
+                            <p>Comprehensive deep learning course covering neural networks, CNNs, RNNs, and practical implementation with TensorFlow.</p>
+                            <span class="resource-badge paid">Paid</span>
                         </a>
                         
-                        <a href="https://www.fast.ai/" target="_blank" class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fas fa-bolt"></i>
-                            </div>
+                        <a href="https://www.fast.ai/" target="_blank" class="extended-resource-card">
                             <h4>Fast.ai Practical Deep Learning</h4>
-                            <p>Top-down approach to deep learning</p>
-                            <span class="resource-type">Free</span>
+                            <p>Top-down approach to deep learning. Learn by building real projects and understanding practical applications.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.edx.org/course/cs50s-introduction-to-artificial-intelligence-with-python" target="_blank" class="extended-resource-card">
+                            <h4>CS50's Introduction to AI with Python</h4>
+                            <p>Harvard's introduction to AI concepts including search algorithms, machine learning, and neural networks.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.udacity.com/course/intro-to-machine-learning--ud120" target="_blank" class="extended-resource-card">
+                            <h4>Intro to Machine Learning - Udacity</h4>
+                            <p>Hands-on introduction to machine learning with practical projects and real-world applications.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" class="extended-resource-card">
+                            <h4>Machine Learning Specialization - Stanford</h4>
+                            <p>Comprehensive specialization covering supervised and unsupervised learning, deep learning, and practical applications.</p>
+                            <span class="resource-badge paid">Paid</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="resource-category">
+                <!-- Books & Documentation -->
+                <div class="resource-category-extended">
                     <h3><i class="fas fa-book"></i> Books & Documentation</h3>
-                    <div class="resource-grid">
-                        <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/" target="_blank" class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fas fa-book"></i>
-                            </div>
+                    <div class="extended-resource-grid">
+                        <a href="https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/" target="_blank" class="extended-resource-card">
                             <h4>Hands-On Machine Learning</h4>
-                            <p>Practical ML with Scikit-Learn & TensorFlow</p>
-                            <span class="resource-type">Book</span>
+                            <p>Practical guide to machine learning with Scikit-Learn, Keras, and TensorFlow. Perfect for practitioners.</p>
+                            <span class="resource-badge book">Book</span>
                         </a>
                         
-                        <a href="https://pytorch.org/tutorials/" target="_blank" class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fab fa-python"></i>
-                            </div>
+                        <a href="https://www.deeplearningbook.org/" target="_blank" class="extended-resource-card">
+                            <h4>Deep Learning Book</h4>
+                            <p>Comprehensive textbook on deep learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://pytorch.org/tutorials/" target="_blank" class="extended-resource-card">
                             <h4>PyTorch Tutorials</h4>
-                            <p>Official PyTorch documentation</p>
-                            <span class="resource-type">Free</span>
+                            <p>Official PyTorch documentation with tutorials covering basics to advanced topics in deep learning.</p>
+                            <span class="resource-badge free">Free</span>
                         </a>
                         
-                        <a href="https://www.tensorflow.org/learn" target="_blank" class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fas fa-cube"></i>
-                            </div>
+                        <a href="https://www.tensorflow.org/learn" target="_blank" class="extended-resource-card">
                             <h4>TensorFlow Learn</h4>
-                            <p>Official TensorFlow learning resources</p>
-                            <span class="resource-type">Free</span>
+                            <p>Official TensorFlow learning resources including tutorials, guides, and best practices.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" class="extended-resource-card">
+                            <h4>Scikit-learn User Guide</h4>
+                            <p>Comprehensive documentation for scikit-learn, the most popular machine learning library in Python.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.manning.com/books/grokking-deep-learning" target="_blank" class="extended-resource-card">
+                            <h4>Grokking Deep Learning</h4>
+                            <p>Beginner-friendly introduction to deep learning with clear explanations and practical examples.</p>
+                            <span class="resource-badge book">Book</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="resource-category">
-                    <h3><i class="fas fa-code"></i> Practice Platforms</h3>
-                    <div class="resource-grid">
-                        <a href="https://www.kaggle.com/learn" target="_blank" class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fas fa-trophy"></i>
-                            </div>
+                <!-- Practice Platforms -->
+                <div class="resource-category-extended">
+                    <h3><i class="fas fa-code"></i> Practice Platforms & Competitions</h3>
+                    <div class="extended-resource-grid">
+                        <a href="https://www.kaggle.com/learn" target="_blank" class="extended-resource-card">
                             <h4>Kaggle Learn</h4>
-                            <p>Free micro-courses on data science</p>
-                            <span class="resource-type">Free</span>
+                            <p>Free micro-courses on data science and machine learning with hands-on exercises and real datasets.</p>
+                            <span class="resource-badge free">Free</span>
                         </a>
                         
-                        <a href="https://www.kaggle.com/competitions" target="_blank" class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fas fa-medal"></i>
-                            </div>
+                        <a href="https://www.kaggle.com/competitions" target="_blank" class="extended-resource-card">
                             <h4>Kaggle Competitions</h4>
-                            <p>Real-world ML competitions</p>
-                            <span class="resource-type">Free</span>
+                            <p>Real-world machine learning competitions with datasets and problems from industry leaders.</p>
+                            <span class="resource-badge free">Free</span>
                         </a>
                         
-                        <a href="https://colab.research.google.com/" target="_blank" class="resource-card">
-                            <div class="resource-icon">
-                                <i class="fab fa-google"></i>
-                            </div>
+                        <a href="https://colab.research.google.com/" target="_blank" class="extended-resource-card">
                             <h4>Google Colab</h4>
-                            <p>Free Jupyter notebook environment</p>
-                            <span class="resource-type">Free</span>
+                            <p>Free Jupyter notebook environment with GPU support for machine learning and data science projects.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.datacamp.com/" target="_blank" class="extended-resource-card">
+                            <h4>DataCamp</h4>
+                            <p>Interactive learning platform for data science and machine learning with hands-on coding exercises.</p>
+                            <span class="resource-badge paid">Paid</span>
+                        </a>
+                        
+                        <a href="https://www.coursera.org/learn/machine-learning-with-python" target="_blank" class="extended-resource-card">
+                            <h4>Machine Learning with Python - IBM</h4>
+                            <p>Practical course on machine learning using Python with real-world projects and case studies.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.udemy.com/course/machinelearning/" target="_blank" class="extended-resource-card">
+                            <h4>Machine Learning A-Z - Udemy</h4>
+                            <p>Comprehensive course covering machine learning algorithms with practical implementation in Python and R.</p>
+                            <span class="resource-badge paid">Paid</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Research Papers & Journals -->
+                <div class="resource-category-extended">
+                    <h3><i class="fas fa-file-alt"></i> Research Papers & Academic Resources</h3>
+                    <div class="extended-resource-grid">
+                        <a href="https://arxiv.org/" target="_blank" class="extended-resource-card">
+                            <h4>arXiv</h4>
+                            <p>Open access repository of research papers in AI, machine learning, and computer science.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://paperswithcode.com/" target="_blank" class="extended-resource-card">
+                            <h4>Papers with Code</h4>
+                            <p>Platform linking research papers with their code implementations and performance benchmarks.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://distill.pub/" target="_blank" class="extended-resource-card">
+                            <h4>Distill</h4>
+                            <p>Journal for clear explanations of machine learning research with interactive visualizations.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.nature.com/subjects/machine-learning" target="_blank" class="extended-resource-card">
+                            <h4>Nature Machine Intelligence</h4>
+                            <p>Leading journal publishing cutting-edge research in machine learning and AI.</p>
+                            <span class="resource-badge paid">Paid</span>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tools Section -->
+        <!-- AI Tools & Platforms Section -->
         <section id="tools" class="content-section">
             <div class="tools-container">
-                <h2 class="section-title">Essential AI Tools</h2>
+                <h2 class="section-title">AI Tools & Platforms</h2>
+                <p class="section-description">Essential tools and platforms for AI development and deployment</p>
                 
+                <!-- Development Tools -->
                 <div class="tool-category">
-                    <h3><i class="fas fa-code"></i> Development Tools</h3>
+                    <h3><i class="fas fa-code"></i> Development Tools & Frameworks</h3>
                     <div class="tool-grid">
                         <div class="tool-card">
                             <div class="tool-icon">
                                 <i class="fab fa-python"></i>
                             </div>
                             <h4>Python</h4>
-                            <p>Primary programming language for AI/ML</p>
-                            <a href="https://www.python.org/" target="_blank" class="tool-link">Get Started</a>
+                            <p>The primary programming language for AI/ML development with extensive libraries and community support.</p>
+                            <div class="tool-links">
+                                <a href="https://www.python.org/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://docs.python.org/3/tutorial/" target="_blank" class="tool-link">Tutorial</a>
+                            </div>
                         </div>
                         
                         <div class="tool-card">
@@ -285,8 +578,11 @@
                                 <i class="fas fa-cube"></i>
                             </div>
                             <h4>Jupyter Notebook</h4>
-                            <p>Interactive development environment</p>
-                            <a href="https://jupyter.org/" target="_blank" class="tool-link">Get Started</a>
+                            <p>Interactive development environment perfect for data science, machine learning experiments, and prototyping.</p>
+                            <div class="tool-links">
+                                <a href="https://jupyter.org/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://jupyter-notebook.readthedocs.io/" target="_blank" class="tool-link">Documentation</a>
+                            </div>
                         </div>
                         
                         <div class="tool-card">
@@ -294,8 +590,11 @@
                                 <i class="fas fa-brain"></i>
                             </div>
                             <h4>TensorFlow</h4>
-                            <p>Google's machine learning framework</p>
-                            <a href="https://www.tensorflow.org/" target="_blank" class="tool-link">Get Started</a>
+                            <p>Google's open-source machine learning framework for building and deploying ML models at scale.</p>
+                            <div class="tool-links">
+                                <a href="https://www.tensorflow.org/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://www.tensorflow.org/tutorials" target="_blank" class="tool-link">Tutorials</a>
+                            </div>
                         </div>
                         
                         <div class="tool-card">
@@ -303,22 +602,53 @@
                                 <i class="fas fa-fire"></i>
                             </div>
                             <h4>PyTorch</h4>
-                            <p>Facebook's deep learning framework</p>
-                            <a href="https://pytorch.org/" target="_blank" class="tool-link">Get Started</a>
+                            <p>Facebook's deep learning framework known for its dynamic computation graphs and research-friendly design.</p>
+                            <div class="tool-links">
+                                <a href="https://pytorch.org/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://pytorch.org/tutorials/" target="_blank" class="tool-link">Tutorials</a>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h4>Scikit-learn</h4>
+                            <p>Comprehensive machine learning library for Python with simple and efficient tools for data mining and analysis.</p>
+                            <div class="tool-links">
+                                <a href="https://scikit-learn.org/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" class="tool-link">User Guide</a>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <h4>Pandas</h4>
+                            <p>Powerful data manipulation and analysis library for Python, essential for data preprocessing and exploration.</p>
+                            <div class="tool-links">
+                                <a href="https://pandas.pydata.org/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://pandas.pydata.org/docs/user_guide/" target="_blank" class="tool-link">User Guide</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Cloud Platforms -->
                 <div class="tool-category">
-                    <h3><i class="fas fa-cloud"></i> Cloud Platforms</h3>
+                    <h3><i class="fas fa-cloud"></i> Cloud Platforms & Services</h3>
                     <div class="tool-grid">
                         <div class="tool-card">
                             <div class="tool-icon">
                                 <i class="fab fa-google"></i>
                             </div>
                             <h4>Google Colab</h4>
-                            <p>Free cloud-based Jupyter notebooks</p>
-                            <a href="https://colab.research.google.com/" target="_blank" class="tool-link">Get Started</a>
+                            <p>Free cloud-based Jupyter notebook environment with GPU support for machine learning and data science.</p>
+                            <div class="tool-links">
+                                <a href="https://colab.research.google.com/" target="_blank" class="tool-link">Get Started</a>
+                                <a href="https://colab.research.google.com/notebooks/intro.ipynb" target="_blank" class="tool-link">Tutorial</a>
+                            </div>
                         </div>
                         
                         <div class="tool-card">
@@ -326,18 +656,218 @@
                                 <i class="fab fa-aws"></i>
                             </div>
                             <h4>AWS SageMaker</h4>
-                            <p>Amazon's ML platform</p>
-                            <a href="https://aws.amazon.com/sagemaker/" target="_blank" class="tool-link">Get Started</a>
+                            <p>Amazon's fully managed machine learning service for building, training, and deploying ML models.</p>
+                            <div class="tool-links">
+                                <a href="https://aws.amazon.com/sagemaker/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://aws.amazon.com/sagemaker/getting-started/" target="_blank" class="tool-link">Getting Started</a>
+                            </div>
                         </div>
                         
                         <div class="tool-card">
                             <div class="tool-icon">
                                 <i class="fab fa-microsoft"></i>
                             </div>
-                            <h4>Azure ML</h4>
-                            <p>Microsoft's machine learning platform</p>
-                            <a href="https://azure.microsoft.com/en-us/services/machine-learning/" target="_blank" class="tool-link">Get Started</a>
+                            <h4>Azure Machine Learning</h4>
+                            <p>Microsoft's cloud-based machine learning platform for building, training, and deploying ML models.</p>
+                            <div class="tool-links">
+                                <a href="https://azure.microsoft.com/en-us/services/machine-learning/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://docs.microsoft.com/en-us/azure/machine-learning/" target="_blank" class="tool-link">Documentation</a>
+                            </div>
                         </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <h4>Google Cloud AI Platform</h4>
+                            <p>Google's comprehensive AI platform offering machine learning services and tools for enterprise use.</p>
+                            <div class="tool-links">
+                                <a href="https://cloud.google.com/ai-platform" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://cloud.google.com/ai-platform/docs" target="_blank" class="tool-link">Documentation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialized Tools -->
+                <div class="tool-category">
+                    <h3><i class="fas fa-wrench"></i> Specialized AI Tools</h3>
+                    <div class="tool-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h4>OpenCV</h4>
+                            <p>Open-source computer vision library for image processing, object detection, and computer vision applications.</p>
+                            <div class="tool-links">
+                                <a href="https://opencv.org/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://docs.opencv.org/master/d6/d00/tutorial_py_root.html" target="_blank" class="tool-link">Tutorials</a>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h4>spaCy</h4>
+                            <p>Advanced natural language processing library for Python with pre-trained models and efficient processing.</p>
+                            <div class="tool-links">
+                                <a href="https://spacy.io/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://spacy.io/usage" target="_blank" class="tool-link">Usage Guide</a>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-comments"></i>
+                            </div>
+                            <h4>NLTK</h4>
+                            <p>Natural Language Toolkit for Python, providing easy-to-use interfaces to over 50 corpora and lexical resources.</p>
+                            <div class="tool-links">
+                                <a href="https://www.nltk.org/" target="_blank" class="tool-link">Official Site</a>
+                                <a href="https://www.nltk.org/book/" target="_blank" class="tool-link">Book</a>
+                            </div>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Matplotlib & Seaborn</h4>
+                            <p>Data visualization libraries for creating publication-quality plots and statistical visualizations.</p>
+                            <div class="tool-links">
+                                <a href="https://matplotlib.org/" target="_blank" class="tool-link">Matplotlib</a>
+                                <a href="https://seaborn.pydata.org/" target="_blank" class="tool-link">Seaborn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects & Practice Section -->
+        <section id="projects" class="content-section">
+            <div class="platform-container">
+                <h2 class="section-title">Projects & Practice</h2>
+                <p class="section-description">Hands-on projects and practice opportunities to apply your AI knowledge</p>
+                
+                <!-- Beginner Projects -->
+                <div class="resource-category-extended">
+                    <h3><i class="fas fa-seedling"></i> Beginner Projects</h3>
+                    <div class="extended-resource-grid">
+                        <a href="https://www.kaggle.com/c/titanic" target="_blank" class="extended-resource-card">
+                            <h4>Titanic Survival Prediction</h4>
+                            <p>Classic machine learning project predicting passenger survival on the Titanic using demographic and ticket information.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.kaggle.com/c/house-prices-advanced-regression-techniques" target="_blank" class="extended-resource-card">
+                            <h4>House Price Prediction</h4>
+                            <p>Predict house prices using regression techniques with features like size, location, and amenities.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.kaggle.com/c/digit-recognizer" target="_blank" class="extended-resource-card">
+                            <h4>Digit Recognition</h4>
+                            <p>Computer vision project recognizing handwritten digits using machine learning algorithms.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.kaggle.com/c/word2vec-nlp-tutorial" target="_blank" class="extended-resource-card">
+                            <h4>Sentiment Analysis</h4>
+                            <p>Natural language processing project analyzing sentiment in movie reviews using text classification.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Intermediate Projects -->
+                <div class="resource-category-extended">
+                    <h3><i class="fas fa-brain"></i> Intermediate Projects</h3>
+                    <div class="extended-resource-grid">
+                        <a href="https://www.kaggle.com/c/carvana-image-masking-challenge" target="_blank" class="extended-resource-card">
+                            <h4>Image Segmentation</h4>
+                            <p>Computer vision project for segmenting cars in images using deep learning and convolutional neural networks.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.kaggle.com/c/quora-insincere-questions-classification" target="_blank" class="extended-resource-card">
+                            <h4>Text Classification</h4>
+                            <p>NLP project classifying insincere questions on Quora using advanced text processing and deep learning.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.kaggle.com/c/porto-seguro-safe-driver-prediction" target="_blank" class="extended-resource-card">
+                            <h4>Insurance Risk Prediction</h4>
+                            <p>Predicting insurance claims using machine learning with imbalanced datasets and feature engineering.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.kaggle.com/c/mercari-price-suggestion-challenge" target="_blank" class="extended-resource-card">
+                            <h4>Price Suggestion System</h4>
+                            <p>Building a price suggestion system for online marketplace using text and categorical features.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Advanced Projects -->
+                <div class="resource-category-extended">
+                    <h3><i class="fas fa-rocket"></i> Advanced Projects</h3>
+                    <div class="extended-resource-grid">
+                        <a href="https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge" target="_blank" class="extended-resource-card">
+                            <h4>Toxic Comment Classification</h4>
+                            <p>Multi-label classification project identifying toxic comments using advanced NLP techniques and deep learning.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.kaggle.com/c/severstal-steel-defect-detection" target="_blank" class="extended-resource-card">
+                            <h4>Steel Defect Detection</h4>
+                            <p>Computer vision project for detecting defects in steel manufacturing using semantic segmentation.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.kaggle.com/c/rsna-pneumonia-detection-challenge" target="_blank" class="extended-resource-card">
+                            <h4>Medical Image Analysis</h4>
+                            <p>Healthcare AI project detecting pneumonia in chest X-rays using deep learning and medical imaging.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://www.kaggle.com/c/google-quest-q-a-labeling" target="_blank" class="extended-resource-card">
+                            <h4>Question Answering System</h4>
+                            <p>Building a question-answering system using transformer models and advanced NLP techniques.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Real-World Applications -->
+                <div class="resource-category-extended">
+                    <h3><i class="fas fa-globe"></i> Real-World Applications</h3>
+                    <div class="extended-resource-grid">
+                        <a href="https://github.com/microsoft/ML-For-Beginners" target="_blank" class="extended-resource-card">
+                            <h4>ML for Beginners - Microsoft</h4>
+                            <p>Comprehensive curriculum with hands-on projects covering real-world machine learning applications.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://github.com/ageron/handson-ml2" target="_blank" class="extended-resource-card">
+                            <h4>Hands-On ML Projects</h4>
+                            <p>Collection of practical machine learning projects with code examples and real-world datasets.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://github.com/aymericdamien/TensorFlow-Examples" target="_blank" class="extended-resource-card">
+                            <h4>TensorFlow Examples</h4>
+                            <p>Comprehensive collection of TensorFlow examples covering various machine learning and deep learning applications.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
+                        
+                        <a href="https://github.com/pytorch/examples" target="_blank" class="extended-resource-card">
+                            <h4>PyTorch Examples</h4>
+                            <p>Official PyTorch examples demonstrating various deep learning models and applications.</p>
+                            <span class="resource-badge free">Free</span>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -435,4 +435,206 @@ const darkThemeStyleSheet = document.createElement('style');
 darkThemeStyleSheet.textContent = darkThemeStyles;
 document.head.appendChild(darkThemeStyleSheet);
 
-console.log('AI Roadmap Website initialized successfully! 🚀');
+// Enhanced features for comprehensive platform
+function setupComprehensiveFeatures() {
+    setupSearchFunctionality();
+    setupProgressTracking();
+    setupResourceFiltering();
+    setupInteractiveElements();
+}
+
+// Search functionality
+function setupSearchFunctionality() {
+    // Add search functionality to resources
+    const searchInput = document.createElement('input');
+    searchInput.type = 'text';
+    searchInput.placeholder = 'Search resources...';
+    searchInput.className = 'search-input';
+    searchInput.style.cssText = `
+        width: 100%;
+        max-width: 400px;
+        padding: 12px 20px;
+        border: 2px solid #e2e8f0;
+        border-radius: 25px;
+        font-size: 1rem;
+        margin: 20px auto;
+        display: block;
+        background: white;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    `;
+
+    // Insert search input into resources section
+    const resourcesSection = document.getElementById('resources');
+    if (resourcesSection) {
+        resourcesSection.insertBefore(searchInput, resourcesSection.firstChild);
+    }
+
+    searchInput.addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase();
+        const resourceCards = document.querySelectorAll('.extended-resource-card, .resource-card');
+
+        resourceCards.forEach(card => {
+            const title = card.querySelector('h4').textContent.toLowerCase();
+            const description = card.querySelector('p').textContent.toLowerCase();
+
+            if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                card.style.display = 'block';
+                card.style.opacity = '1';
+            } else {
+                card.style.opacity = '0.3';
+            }
+        });
+    });
+}
+
+// Progress tracking
+function setupProgressTracking() {
+    // Add progress indicators to roadmap levels
+    const roadmapLevels = document.querySelectorAll('.roadmap-level');
+
+    roadmapLevels.forEach((level, index) => {
+        const progressBar = document.createElement('div');
+        progressBar.className = 'progress-bar';
+        progressBar.style.cssText = `
+            width: 100%;
+            height: 4px;
+            background: #e2e8f0;
+            border-radius: 2px;
+            margin: 15px 0;
+            overflow: hidden;
+        `;
+
+        const progressFill = document.createElement('div');
+        progressFill.className = 'progress-fill';
+        progressFill.style.cssText = `
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.3s ease;
+        `;
+
+        progressBar.appendChild(progressFill);
+        level.appendChild(progressBar);
+
+        // Simulate progress based on level
+        const progress = (index + 1) * 25;
+        setTimeout(() => {
+            progressFill.style.width = progress + '%';
+        }, 500 + (index * 200));
+    });
+}
+
+// Resource filtering
+function setupResourceFiltering() {
+    // Add filter buttons for resources
+    const filterContainer = document.createElement('div');
+    filterContainer.className = 'filter-container';
+    filterContainer.style.cssText = `
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
+        flex-wrap: wrap;
+    `;
+
+    const filters = ['All', 'Free', 'Paid', 'Book', 'Course'];
+    filters.forEach(filter => {
+        const button = document.createElement('button');
+        button.textContent = filter;
+        button.className = 'filter-btn';
+        button.style.cssText = `
+            padding: 8px 16px;
+            border: 2px solid #e2e8f0;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        `;
+
+        if (filter === 'All') {
+            button.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+            button.style.color = 'white';
+            button.style.borderColor = 'transparent';
+        }
+
+        button.addEventListener('click', function () {
+            // Remove active class from all buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.style.background = 'white';
+                btn.style.color = '#4a5568';
+                btn.style.borderColor = '#e2e8f0';
+            });
+
+            // Add active class to clicked button
+            this.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+            this.style.color = 'white';
+            this.style.borderColor = 'transparent';
+
+            // Filter resources
+            const resourceCards = document.querySelectorAll('.extended-resource-card');
+            resourceCards.forEach(card => {
+                if (filter === 'All') {
+                    card.style.display = 'block';
+                } else {
+                    const badge = card.querySelector('.resource-badge');
+                    if (badge && badge.textContent.toLowerCase().includes(filter.toLowerCase())) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        });
+
+        filterContainer.appendChild(button);
+    });
+
+    // Insert filter container into resources section
+    const resourcesSection = document.getElementById('resources');
+    if (resourcesSection) {
+        const firstChild = resourcesSection.querySelector('.resources-container');
+        if (firstChild) {
+            firstChild.insertBefore(filterContainer, firstChild.firstChild);
+        }
+    }
+}
+
+// Interactive elements
+function setupInteractiveElements() {
+    // Add hover effects to concept cards
+    const conceptCards = document.querySelectorAll('.concept-card');
+    conceptCards.forEach(card => {
+        card.addEventListener('mouseenter', function () {
+            this.style.transform = 'translateY(-8px) scale(1.02)';
+            this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.2)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+        });
+    });
+
+    // Add click effects to explanation cards
+    const explanationCards = document.querySelectorAll('.explanation-card');
+    explanationCards.forEach(card => {
+        card.addEventListener('click', function () {
+            this.style.background = '#667eea';
+            this.style.color = 'white';
+            this.style.transform = 'scale(1.05)';
+
+            setTimeout(() => {
+                this.style.background = '#f7fafc';
+                this.style.color = '#4a5568';
+                this.style.transform = 'scale(1)';
+            }, 300);
+        });
+    });
+}
+
+// Initialize comprehensive features
+setupComprehensiveFeatures();
+
+console.log('LearnAI Comprehensive Platform initialized successfully! 🚀');
