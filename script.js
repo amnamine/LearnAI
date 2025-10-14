@@ -368,16 +368,179 @@ function optimizePerformance() {
 // Initialize performance optimizations
 optimizePerformance();
 
-// PERMANENT DARK MODE - NO THEME TOGGLE
-function setPermanentDarkMode() {
-    // Force dark mode permanently
-    document.body.classList.add('dark-theme');
-    localStorage.setItem('theme', 'dark');
-    console.log('🌙 Website set to PERMANENT DARK MODE');
+// Enhanced Theme Toggle with Perfect Functionality
+function addThemeToggle() {
+    const themeToggle = document.createElement('button');
+    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+    themeToggle.className = 'theme-toggle';
+    themeToggle.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: none;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        font-size: 1.4rem;
+        cursor: pointer;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+    `;
+
+    document.body.appendChild(themeToggle);
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    themeToggle.addEventListener('click', function (event) {
+        const isDark = document.body.classList.contains('dark-theme');
+
+        // FORCE IMMEDIATE THEME CHANGE - REAL TIME
+        if (isDark) {
+            // Switch to LIGHT mode
+            document.body.classList.remove('dark-theme');
+            this.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', 'light');
+
+            // Force update all elements immediately
+            updateAllElementsToLight();
+            console.log('🌞 Switched to LIGHT mode - REAL TIME');
+        } else {
+            // Switch to DARK mode
+            document.body.classList.add('dark-theme');
+            this.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem('theme', 'dark');
+
+            // Force update all elements immediately
+            updateAllElementsToDark();
+            console.log('🌙 Switched to DARK mode - REAL TIME');
+        }
+
+        // Add rotation animation
+        const icon = this.querySelector('i');
+        icon.style.transform = 'rotate(360deg) scale(1.2)';
+        setTimeout(() => {
+            icon.style.transform = 'rotate(0deg) scale(1)';
+        }, 300);
+
+        // Add ripple effect
+        createRipple(this, event);
+    });
+
+    // Function to force update all elements to LIGHT mode
+    function updateAllElementsToLight() {
+        // Update all text elements
+        const allTextElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, li, div, a');
+        allTextElements.forEach(element => {
+            if (element.closest('.header-content, .roadmap-container, .resources-container, .tools-container, .concepts-container, .platform-container')) {
+                element.style.color = '#0f172a';
+            }
+        });
+
+        // Update containers
+        const containers = document.querySelectorAll('.header-content, .roadmap-container, .resources-container, .tools-container, .concepts-container, .platform-container');
+        containers.forEach(container => {
+            container.style.background = 'rgba(255, 255, 255, 0.95)';
+            container.style.color = '#0f172a';
+        });
+
+        // Update cards
+        const cards = document.querySelectorAll('.roadmap-level, .extended-resource-card, .tool-card, .concept-card, .skill-card');
+        cards.forEach(card => {
+            card.style.background = '#ffffff';
+            card.style.color = '#0f172a';
+        });
+
+        // Update body
+        document.body.style.background = 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)';
+        document.body.style.color = '#0f172a';
+    }
+
+    // Function to force update all elements to DARK mode
+    function updateAllElementsToDark() {
+        // Update all text elements
+        const allTextElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, li, div, a');
+        allTextElements.forEach(element => {
+            if (element.closest('.header-content, .roadmap-container, .resources-container, .tools-container, .concepts-container, .platform-container')) {
+                element.style.color = '#f8fafc';
+            }
+        });
+
+        // Update containers
+        const containers = document.querySelectorAll('.header-content, .roadmap-container, .resources-container, .tools-container, .concepts-container, .platform-container');
+        containers.forEach(container => {
+            container.style.background = 'rgba(15, 23, 42, 0.9)';
+            container.style.color = '#f8fafc';
+        });
+
+        // Update cards
+        const cards = document.querySelectorAll('.roadmap-level, .extended-resource-card, .tool-card, .concept-card, .skill-card');
+        cards.forEach(card => {
+            card.style.background = '#1e293b';
+            card.style.color = '#f8fafc';
+        });
+
+        // Update body
+        document.body.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)';
+        document.body.style.color = '#f8fafc';
+    }
+
+    // Hover effects
+    themeToggle.addEventListener('mouseenter', function () {
+        this.style.transform = 'scale(1.1)';
+        this.style.boxShadow = '0 12px 35px rgba(102, 126, 234, 0.4)';
+    });
+
+    themeToggle.addEventListener('mouseleave', function () {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.3)';
+    });
 }
 
-// Initialize permanent dark mode
-setPermanentDarkMode();
+// Enhanced Ripple Effect
+function createRipple(button, event) {
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+
+    ripple.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}px;
+        top: ${y}px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    `;
+
+    button.style.position = 'relative';
+    button.style.overflow = 'hidden';
+    button.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Initialize enhanced theme toggle
+addThemeToggle();
 
 // Add dark theme styles
 const darkThemeStyles = `
@@ -976,7 +1139,7 @@ keyboardStyles.textContent = `
 `;
 document.head.appendChild(keyboardStyles);
 
-// Enhanced Dark Mode Debugging
+// Enhanced Real-Time Theme Switching
 function debugDarkMode() {
     console.log('🌙 Dark Mode Debug Info:');
     console.log('Current theme:', localStorage.getItem('theme') || 'light');
@@ -987,23 +1150,96 @@ function debugDarkMode() {
 // Call debug function
 debugDarkMode();
 
-// Force dark mode visibility
-function ensureDarkModeVisibility() {
-    const darkThemeElements = document.querySelectorAll('.dark-theme, .dark-theme *');
-    darkThemeElements.forEach(element => {
-        // Force high contrast
-        if (element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' ||
-            element.tagName === 'H4' || element.tagName === 'H5' || element.tagName === 'H6') {
-            element.style.color = '#f8fafc !important';
-            element.style.textShadow = '0 2px 4px rgba(0, 0, 0, 0.5)';
+// Real-time theme switching system
+function setupRealTimeThemeSwitching() {
+    // Add CSS transition for smooth theme changes
+    const style = document.createElement('style');
+    style.textContent = `
+        * {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
         }
-        if (element.tagName === 'P' || element.tagName === 'SPAN' || element.tagName === 'LI') {
-            element.style.color = '#e2e8f0 !important';
+        
+        .theme-toggle {
+            transition: all 0.3s ease !important;
         }
-    });
+    `;
+    document.head.appendChild(style);
+
+    // Force immediate theme application on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        // Apply dark theme styles immediately
+        setTimeout(() => {
+            updateAllElementsToDark();
+        }, 100);
+    } else {
+        document.body.classList.remove('dark-theme');
+        // Apply light theme styles immediately
+        setTimeout(() => {
+            updateAllElementsToLight();
+        }, 100);
+    }
 }
 
-// Call visibility function
-ensureDarkModeVisibility();
+// Global functions for theme switching
+window.updateAllElementsToLight = function () {
+    // Update all text elements
+    const allTextElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, li, div, a');
+    allTextElements.forEach(element => {
+        if (element.closest('.header-content, .roadmap-container, .resources-container, .tools-container, .concepts-container, .platform-container')) {
+            element.style.color = '#0f172a';
+        }
+    });
+
+    // Update containers
+    const containers = document.querySelectorAll('.header-content, .roadmap-container, .resources-container, .tools-container, .concepts-container, .platform-container');
+    containers.forEach(container => {
+        container.style.background = 'rgba(255, 255, 255, 0.95)';
+        container.style.color = '#0f172a';
+    });
+
+    // Update cards
+    const cards = document.querySelectorAll('.roadmap-level, .extended-resource-card, .tool-card, .concept-card, .skill-card');
+    cards.forEach(card => {
+        card.style.background = '#ffffff';
+        card.style.color = '#0f172a';
+    });
+
+    // Update body
+    document.body.style.background = 'linear-gradient(135deg, #2563eb 0%, #7c3aed 100%)';
+    document.body.style.color = '#0f172a';
+};
+
+window.updateAllElementsToDark = function () {
+    // Update all text elements
+    const allTextElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, span, li, div, a');
+    allTextElements.forEach(element => {
+        if (element.closest('.header-content, .roadmap-container, .resources-container, .tools-container, .concepts-container, .platform-container')) {
+            element.style.color = '#f8fafc';
+        }
+    });
+
+    // Update containers
+    const containers = document.querySelectorAll('.header-content, .roadmap-container, .resources-container, .tools-container, .concepts-container, .platform-container');
+    containers.forEach(container => {
+        container.style.background = 'rgba(15, 23, 42, 0.9)';
+        container.style.color = '#f8fafc';
+    });
+
+    // Update cards
+    const cards = document.querySelectorAll('.roadmap-level, .extended-resource-card, .tool-card, .concept-card, .skill-card');
+    cards.forEach(card => {
+        card.style.background = '#1e293b';
+        card.style.color = '#f8fafc';
+    });
+
+    // Update body
+    document.body.style.background = 'linear-gradient(135deg, #0f172a 0%, #1e293b 100%)';
+    document.body.style.color = '#f8fafc';
+};
+
+// Initialize real-time theme switching
+setupRealTimeThemeSwitching();
 
 console.log('LearnAI Premium Platform with MAXIMUM VISIBILITY & EXPANDED COLOR PALETTE initialized successfully! 🚀✨');

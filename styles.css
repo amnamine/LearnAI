@@ -139,9 +139,9 @@ html {
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: var(--dark-bg-primary);
+    background: var(--gradient-primary);
     min-height: 100vh;
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
@@ -194,9 +194,9 @@ body::before {
 }
 
 .header-content {
-    background: var(--dark-glass);
+    background: var(--bg-glass);
     backdrop-filter: blur(20px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-3xl);
     padding: var(--space-16);
     box-shadow: var(--shadow-2xl);
@@ -229,14 +229,14 @@ body::before {
     font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-4);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-6);
     animation: titleGlow 2s ease-in-out infinite alternate;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes titleGlow {
@@ -269,10 +269,10 @@ body::before {
 
 .subtitle {
     font-size: 1.25rem;
-    color: var(--dark-text-secondary);
+    color: var(--text-secondary);
     font-weight: 500;
     margin-bottom: var(--space-12);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-stats {
@@ -286,10 +286,10 @@ body::before {
 .stat {
     text-align: center;
     padding: var(--space-6);
-    background: var(--dark-glass-light);
+    background: var(--bg-glass);
     backdrop-filter: blur(10px);
     border-radius: var(--radius-xl);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     transition: all var(--transition-normal);
     min-width: 120px;
     box-shadow: var(--shadow-lg);
@@ -324,7 +324,7 @@ body::before {
 
 .stat-label {
     font-size: 0.9rem;
-    color: var(--dark-text-muted);
+    color: var(--text-muted);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -333,7 +333,7 @@ body::before {
 .section-description {
     text-align: center;
     font-size: 1.1rem;
-    color: var(--dark-text-secondary);
+    color: var(--text-secondary);
     margin-bottom: var(--space-12);
     max-width: 800px;
     margin-left: auto;
@@ -353,9 +353,9 @@ body::before {
 }
 
 .nav-tab {
-    background: var(--dark-glass-light);
+    background: var(--bg-glass);
     backdrop-filter: blur(20px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     padding: var(--space-4) var(--space-6);
     border-radius: var(--radius-full);
     font-size: 1rem;
@@ -365,7 +365,7 @@ body::before {
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     position: relative;
     overflow: hidden;
     min-width: 180px;
@@ -426,8 +426,8 @@ body::before {
     font-size: clamp(2rem, 4vw, 3rem);
     text-align: center;
     margin-bottom: var(--space-8);
-    color: var(--dark-text-primary);
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: var(--text-primary);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: titleSlide 1s ease-out;
     font-weight: 700;
 }
@@ -450,9 +450,9 @@ body::before {
 .tools-container,
 .concepts-container,
 .platform-container {
-    background: var(--dark-glass);
+    background: var(--bg-glass);
     backdrop-filter: blur(20px);
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-3xl);
     padding: var(--space-12);
     box-shadow: var(--shadow-2xl);
@@ -484,14 +484,14 @@ body::before {
 }
 
 .roadmap-level {
-    background: var(--dark-bg-secondary);
+    background: var(--bg-primary);
     border-radius: var(--radius-2xl);
     padding: var(--space-8);
     box-shadow: var(--shadow-xl);
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .roadmap-level::before {
@@ -582,12 +582,12 @@ body::before {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 2rem;
     font-weight: 700;
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-2);
 }
 
 .level-info p {
-    color: var(--dark-text-secondary);
+    color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.6;
     font-weight: 500;
@@ -623,7 +623,7 @@ body::before {
 }
 
 .skill-card {
-    background: var(--dark-bg-tertiary);
+    background: var(--bg-secondary);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
     border-left: 4px solid var(--primary);
@@ -636,14 +636,14 @@ body::before {
 .skill-card:hover {
     transform: translateX(10px) translateY(-5px);
     box-shadow: var(--shadow-xl);
-    background: var(--dark-bg-secondary);
+    background: var(--bg-primary);
 }
 
 .skill-card h3 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.4rem;
     font-weight: 600;
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-4);
     display: flex;
     align-items: center;
@@ -684,13 +684,13 @@ body::before {
 }
 
 .explanation-card h4 {
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     font-weight: 600;
     margin-bottom: var(--space-2);
 }
 
 .explanation-card p {
-    color: var(--dark-text-secondary);
+    color: var(--text-secondary);
     line-height: 1.7;
     font-weight: 500;
 }
@@ -702,7 +702,7 @@ body::before {
 
 .skill-card li {
     padding: var(--space-2) 0;
-    color: var(--dark-text-secondary);
+    color: var(--text-secondary);
     position: relative;
     padding-left: var(--space-6);
     transition: all var(--transition-fast);
@@ -733,7 +733,7 @@ body::before {
 }
 
 .skill-card li:hover {
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     transform: translateX(5px);
 }
 
@@ -799,9 +799,9 @@ body::before {
 .resource-category-extended {
     margin-bottom: var(--space-12);
     padding: var(--space-8);
-    background: var(--dark-bg-secondary);
+    background: var(--bg-secondary);
     border-radius: var(--radius-2xl);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -819,7 +819,7 @@ body::before {
 
 .resource-category-extended h3 {
     font-family: 'Space Grotesk', sans-serif;
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-6);
     display: flex;
     align-items: center;
@@ -850,7 +850,7 @@ body::before {
 }
 
 .extended-resource-card {
-    background: var(--dark-bg-secondary);
+    background: var(--bg-primary);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
     box-shadow: var(--shadow-lg);
@@ -859,7 +859,7 @@ body::before {
     color: inherit;
     position: relative;
     overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .extended-resource-card::before {
@@ -881,11 +881,11 @@ body::before {
 .extended-resource-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: var(--shadow-2xl);
-    background: var(--dark-bg-tertiary);
+    background: var(--bg-primary);
 }
 
 .extended-resource-card h4 {
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-2);
     font-size: 1.2rem;
     font-weight: 600;
@@ -897,7 +897,7 @@ body::before {
 }
 
 .extended-resource-card p {
-    color: var(--dark-text-secondary);
+    color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: var(--space-3);
@@ -944,7 +944,7 @@ body::before {
 
 .tool-category h3 {
     font-family: 'Space Grotesk', sans-serif;
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-6);
     display: flex;
     align-items: center;
@@ -965,7 +965,7 @@ body::before {
 }
 
 .tool-card {
-    background: var(--dark-bg-secondary);
+    background: var(--bg-primary);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
     text-align: center;
@@ -973,7 +973,7 @@ body::before {
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .tool-card::before {
@@ -995,7 +995,7 @@ body::before {
 .tool-card:hover {
     transform: translateY(-10px) scale(1.05);
     box-shadow: var(--shadow-2xl);
-    background: var(--dark-bg-tertiary);
+    background: var(--bg-primary);
 }
 
 .tool-icon {
@@ -1024,12 +1024,12 @@ body::before {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-2);
 }
 
 .tool-card p {
-    color: var(--dark-text-secondary);
+    color: var(--text-secondary);
     margin-bottom: var(--space-4);
     line-height: 1.6;
     font-weight: 500;
@@ -1071,13 +1071,13 @@ body::before {
 }
 
 .concept-card {
-    background: var(--dark-bg-secondary);
+    background: var(--bg-primary);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-normal);
     margin-bottom: var(--space-4);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -1096,12 +1096,12 @@ body::before {
 .concept-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: var(--shadow-2xl);
-    background: var(--dark-bg-tertiary);
+    background: var(--bg-primary);
 }
 
 .concept-card h3 {
     font-family: 'Space Grotesk', sans-serif;
-    color: var(--dark-text-primary);
+    color: var(--text-primary);
     margin-bottom: var(--space-4);
     display: flex;
     align-items: center;
@@ -1240,7 +1240,124 @@ body::before {
     }
 }
 
-/* PERMANENT DARK MODE - NO THEME TOGGLE NEEDED */
+/* DARK THEME - PERFECT CONTRAST & VISIBILITY */
+.dark-theme {
+    background: var(--dark-bg-primary) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+.dark-theme .header-content,
+.dark-theme .roadmap-container,
+.dark-theme .resources-container,
+.dark-theme .tools-container,
+.dark-theme .concepts-container,
+.dark-theme .platform-container {
+    background: var(--dark-glass) !important;
+    color: var(--dark-text-primary) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark-theme .roadmap-level,
+.dark-theme .extended-resource-card,
+.dark-theme .tool-card,
+.dark-theme .concept-card {
+    background: var(--dark-bg-secondary) !important;
+    color: var(--dark-text-primary) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-theme .skill-card,
+.dark-theme .explanation-card {
+    background: var(--dark-bg-tertiary) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme h5,
+.dark-theme h6 {
+    color: var(--dark-text-primary) !important;
+}
+
+.dark-theme p,
+.dark-theme li,
+.dark-theme span {
+    color: var(--dark-text-secondary) !important;
+}
+
+.dark-theme .main-title {
+    color: var(--dark-text-primary) !important;
+}
+
+.dark-theme .subtitle {
+    color: var(--dark-text-secondary) !important;
+}
+
+.dark-theme .section-title {
+    color: var(--dark-text-primary) !important;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dark-theme .section-description {
+    color: var(--dark-text-secondary) !important;
+}
+
+.dark-theme .stat-label {
+    color: var(--dark-text-muted) !important;
+}
+
+.dark-theme .level-info p {
+    color: var(--dark-text-secondary) !important;
+}
+
+.dark-theme .skill-card h3,
+.dark-theme .concept-card h3,
+.dark-theme .tool-card h4,
+.dark-theme .extended-resource-card h4 {
+    color: var(--dark-text-primary) !important;
+}
+
+.dark-theme .skill-card li,
+.dark-theme .concept-card p,
+.dark-theme .tool-card p,
+.dark-theme .extended-resource-card p {
+    color: var(--dark-text-secondary) !important;
+}
+
+.dark-theme .explanation-card h4 {
+    color: var(--dark-text-primary) !important;
+}
+
+.dark-theme .explanation-card p {
+    color: var(--dark-text-secondary) !important;
+}
+
+.dark-theme .resource-category-extended {
+    background: var(--dark-bg-secondary) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-theme .resource-category-extended h3 {
+    color: var(--dark-text-primary) !important;
+}
+
+.dark-theme .stat {
+    background: var(--dark-glass-light) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark-theme .nav-tab {
+    background: var(--dark-glass-light) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+.dark-theme .nav-tab:hover,
+.dark-theme .nav-tab.active {
+    color: var(--text-white) !important;
+}
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
