@@ -11,6 +11,44 @@ function initializeApp() {
     setupScrollEffects();
     setupTooltips();
     setupProgressTracking();
+    setupThemeToggle();
+}
+
+// Theme toggle functionality
+function setupThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
+        document.body.classList.add('dark-theme');
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    // Theme toggle click handler
+    themeToggle.addEventListener('click', () => {
+        const isDarkTheme = document.body.classList.toggle('dark-theme');
+        localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+
+        // Update toggle button icon
+        themeToggle.innerHTML = isDarkTheme ?
+            '<i class="fas fa-sun"></i>' :
+            '<i class="fas fa-moon"></i>';
+    });
+
+    // Listen for system theme changes
+    prefersDarkScheme.addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+                document.body.classList.add('dark-theme');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                document.body.classList.remove('dark-theme');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+        }
+    });
 }
 
 // Navigation functionality
