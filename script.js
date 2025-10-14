@@ -368,7 +368,7 @@ function optimizePerformance() {
 // Initialize performance optimizations
 optimizePerformance();
 
-// Add theme toggle functionality (bonus feature)
+// Enhanced Theme Toggle with Perfect Functionality
 function addThemeToggle() {
     const themeToggle = document.createElement('button');
     themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
@@ -377,30 +377,100 @@ function addThemeToggle() {
         position: fixed;
         top: 20px;
         right: 20px;
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
         border: none;
-        background: rgba(255, 255, 255, 0.9);
-        color: #333;
-        font-size: 1.2rem;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        font-size: 1.4rem;
         cursor: pointer;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.2);
     `;
 
     document.body.appendChild(themeToggle);
 
-    themeToggle.addEventListener('click', function () {
-        document.body.classList.toggle('dark-theme');
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    themeToggle.addEventListener('click', function (event) {
+        const isDark = document.body.classList.contains('dark-theme');
+
+        if (isDark) {
+            document.body.classList.remove('dark-theme');
+            this.innerHTML = '<i class="fas fa-moon"></i>';
+            localStorage.setItem('theme', 'light');
+        } else {
+            document.body.classList.add('dark-theme');
+            this.innerHTML = '<i class="fas fa-sun"></i>';
+            localStorage.setItem('theme', 'dark');
+        }
+
+        // Add rotation animation
         const icon = this.querySelector('i');
-        icon.classList.toggle('fa-moon');
-        icon.classList.toggle('fa-sun');
+        icon.style.transform = 'rotate(360deg) scale(1.2)';
+        setTimeout(() => {
+            icon.style.transform = 'rotate(0deg) scale(1)';
+        }, 300);
+
+        // Add ripple effect
+        createRipple(this, event);
+    });
+
+    // Hover effects
+    themeToggle.addEventListener('mouseenter', function () {
+        this.style.transform = 'scale(1.1)';
+        this.style.boxShadow = '0 12px 35px rgba(102, 126, 234, 0.4)';
+    });
+
+    themeToggle.addEventListener('mouseleave', function () {
+        this.style.transform = 'scale(1)';
+        this.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.3)';
     });
 }
 
-// Initialize theme toggle
+// Enhanced Ripple Effect
+function createRipple(button, event) {
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+
+    ripple.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}px;
+        top: ${y}px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    `;
+
+    button.style.position = 'relative';
+    button.style.overflow = 'hidden';
+    button.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Initialize enhanced theme toggle
 addThemeToggle();
 
 // Add dark theme styles
@@ -917,4 +987,87 @@ function optimizePerformance() {
 // Initialize performance optimizations
 optimizePerformance();
 
-console.log('LearnAI Premium Platform with Stunning Aesthetics initialized successfully! 🚀✨');
+// Additional Premium Enhancements
+function addPremiumEnhancements() {
+    // Add smooth page transitions
+    document.body.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+
+    // Add loading animation
+    window.addEventListener('load', function () {
+        document.body.style.opacity = '0';
+        document.body.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            document.body.style.opacity = '1';
+            document.body.style.transform = 'scale(1)';
+        }, 100);
+    });
+
+    // Add scroll-based animations
+    let ticking = false;
+    function updateScrollAnimations() {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.3;
+
+        // Parallax effect for header
+        const header = document.querySelector('.header');
+        if (header) {
+            header.style.transform = `translateY(${rate}px)`;
+        }
+
+        // Fade in elements on scroll
+        const elements = document.querySelectorAll('.roadmap-level, .concept-card, .tool-card');
+        elements.forEach((element, index) => {
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+
+            if (elementTop < window.innerHeight - elementVisible) {
+                element.style.opacity = '1';
+                element.style.transform = 'translateY(0) scale(1)';
+            }
+        });
+
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateScrollAnimations);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Tab') {
+            document.body.classList.add('keyboard-navigation');
+        }
+    });
+
+    document.addEventListener('mousedown', function () {
+        document.body.classList.remove('keyboard-navigation');
+    });
+}
+
+// Initialize premium enhancements
+addPremiumEnhancements();
+
+// Add keyboard navigation styles
+const keyboardStyles = document.createElement('style');
+keyboardStyles.textContent = `
+    .keyboard-navigation *:focus {
+        outline: 2px solid #667eea !important;
+        outline-offset: 2px !important;
+    }
+    
+    .keyboard-navigation .nav-tab:focus,
+    .keyboard-navigation .tool-link:focus,
+    .keyboard-navigation .filter-btn:focus {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4) !important;
+    }
+`;
+document.head.appendChild(keyboardStyles);
+
+console.log('LearnAI Premium Platform with Perfect Visibility & Stunning Aesthetics initialized successfully! 🚀✨');
