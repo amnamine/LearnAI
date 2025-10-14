@@ -368,110 +368,16 @@ function optimizePerformance() {
 // Initialize performance optimizations
 optimizePerformance();
 
-// Enhanced Theme Toggle with Perfect Functionality
-function addThemeToggle() {
-    const themeToggle = document.createElement('button');
-    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-    themeToggle.className = 'theme-toggle';
-    themeToggle.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        border: none;
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        color: white;
-        font-size: 1.4rem;
-        cursor: pointer;
-        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        backdrop-filter: blur(10px);
-        border: 2px solid rgba(255, 255, 255, 0.2);
-    `;
-
-    document.body.appendChild(themeToggle);
-
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-theme');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-
-    themeToggle.addEventListener('click', function (event) {
-        const isDark = document.body.classList.contains('dark-theme');
-
-        if (isDark) {
-            document.body.classList.remove('dark-theme');
-            this.innerHTML = '<i class="fas fa-moon"></i>';
-            localStorage.setItem('theme', 'light');
-        } else {
-            document.body.classList.add('dark-theme');
-            this.innerHTML = '<i class="fas fa-sun"></i>';
-            localStorage.setItem('theme', 'dark');
-        }
-
-        // Add rotation animation
-        const icon = this.querySelector('i');
-        icon.style.transform = 'rotate(360deg) scale(1.2)';
-        setTimeout(() => {
-            icon.style.transform = 'rotate(0deg) scale(1)';
-        }, 300);
-
-        // Add ripple effect
-        createRipple(this, event);
-    });
-
-    // Hover effects
-    themeToggle.addEventListener('mouseenter', function () {
-        this.style.transform = 'scale(1.1)';
-        this.style.boxShadow = '0 12px 35px rgba(102, 126, 234, 0.4)';
-    });
-
-    themeToggle.addEventListener('mouseleave', function () {
-        this.style.transform = 'scale(1)';
-        this.style.boxShadow = '0 8px 25px rgba(102, 126, 234, 0.3)';
-    });
+// PERMANENT DARK MODE - NO THEME TOGGLE
+function setPermanentDarkMode() {
+    // Force dark mode permanently
+    document.body.classList.add('dark-theme');
+    localStorage.setItem('theme', 'dark');
+    console.log('🌙 Website set to PERMANENT DARK MODE');
 }
 
-// Enhanced Ripple Effect
-function createRipple(button, event) {
-    const ripple = document.createElement('span');
-    const rect = button.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = event.clientX - rect.left - size / 2;
-    const y = event.clientY - rect.top - size / 2;
-
-    ripple.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        left: ${x}px;
-        top: ${y}px;
-        background: rgba(255, 255, 255, 0.6);
-        border-radius: 50%;
-        transform: scale(0);
-        animation: ripple 0.6s linear;
-        pointer-events: none;
-    `;
-
-    button.style.position = 'relative';
-    button.style.overflow = 'hidden';
-    button.appendChild(ripple);
-
-    setTimeout(() => {
-        ripple.remove();
-    }, 600);
-}
-
-// Initialize enhanced theme toggle
-addThemeToggle();
+// Initialize permanent dark mode
+setPermanentDarkMode();
 
 // Add dark theme styles
 const darkThemeStyles = `
