@@ -1070,4 +1070,34 @@ keyboardStyles.textContent = `
 `;
 document.head.appendChild(keyboardStyles);
 
-console.log('LearnAI Premium Platform with Perfect Visibility & Stunning Aesthetics initialized successfully! 🚀✨');
+// Enhanced Dark Mode Debugging
+function debugDarkMode() {
+    console.log('🌙 Dark Mode Debug Info:');
+    console.log('Current theme:', localStorage.getItem('theme') || 'light');
+    console.log('Body has dark-theme class:', document.body.classList.contains('dark-theme'));
+    console.log('Theme toggle exists:', document.querySelector('.theme-toggle') !== null);
+}
+
+// Call debug function
+debugDarkMode();
+
+// Force dark mode visibility
+function ensureDarkModeVisibility() {
+    const darkThemeElements = document.querySelectorAll('.dark-theme, .dark-theme *');
+    darkThemeElements.forEach(element => {
+        // Force high contrast
+        if (element.tagName === 'H1' || element.tagName === 'H2' || element.tagName === 'H3' ||
+            element.tagName === 'H4' || element.tagName === 'H5' || element.tagName === 'H6') {
+            element.style.color = '#f8fafc !important';
+            element.style.textShadow = '0 2px 4px rgba(0, 0, 0, 0.5)';
+        }
+        if (element.tagName === 'P' || element.tagName === 'SPAN' || element.tagName === 'LI') {
+            element.style.color = '#e2e8f0 !important';
+        }
+    });
+}
+
+// Call visibility function
+ensureDarkModeVisibility();
+
+console.log('LearnAI Premium Platform with MAXIMUM VISIBILITY & EXPANDED COLOR PALETTE initialized successfully! 🚀✨');

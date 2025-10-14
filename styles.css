@@ -1,61 +1,97 @@
-/* Premium AI Learning Platform - Perfect Visibility & Stunning Design */
+/* Premium AI Learning Platform - HIGH CONTRAST & EXPANDED COLOR PALETTE */
 
 /* Import Premium Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
 
-/* CSS Variables for Perfect Color System */
+/* CSS Variables for EXPANDED Color System */
 :root {
-    /* Light Theme Colors */
-    --primary: #667eea;
-    --primary-dark: #5a67d8;
-    --secondary: #764ba2;
-    --accent: #f093fb;
-    --success: #48bb78;
-    --warning: #ed8936;
-    --danger: #f56565;
-    --info: #4299e1;
+    /* LIGHT THEME - HIGH CONTRAST COLORS */
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #3b82f6;
+    --secondary: #7c3aed;
+    --secondary-dark: #6d28d9;
+    --secondary-light: #8b5cf6;
+    --accent: #f59e0b;
+    --accent-dark: #d97706;
+    --accent-light: #fbbf24;
+    --success: #10b981;
+    --success-dark: #059669;
+    --success-light: #34d399;
+    --warning: #f59e0b;
+    --warning-dark: #d97706;
+    --warning-light: #fbbf24;
+    --danger: #ef4444;
+    --danger-dark: #dc2626;
+    --danger-light: #f87171;
+    --info: #06b6d4;
+    --info-dark: #0891b2;
+    --info-light: #22d3ee;
+    --purple: #8b5cf6;
+    --pink: #ec4899;
+    --orange: #f97316;
+    --teal: #14b8a6;
+    --cyan: #06b6d4;
+    --lime: #84cc16;
+    --emerald: #10b981;
+    --rose: #f43f5e;
+    --indigo: #6366f1;
+    --violet: #8b5cf6;
 
-    /* Text Colors - High Contrast */
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
-    --text-light: #a0aec0;
+    /* TEXT COLORS - MAXIMUM CONTRAST */
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --text-muted: #64748b;
+    --text-light: #94a3b8;
     --text-white: #ffffff;
+    --text-black: #000000;
 
-    /* Background Colors */
+    /* BACKGROUND COLORS */
     --bg-primary: #ffffff;
-    --bg-secondary: #f7fafc;
-    --bg-tertiary: #edf2f7;
-    --bg-glass: rgba(255, 255, 255, 0.9);
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-quaternary: #e2e8f0;
+    --bg-glass: rgba(255, 255, 255, 0.95);
     --bg-glass-dark: rgba(0, 0, 0, 0.1);
 
-    /* Gradients - High Contrast */
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-secondary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --gradient-accent: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
-    --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-    --gradient-warning: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-    --gradient-danger: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+    /* EXPANDED GRADIENTS */
+    --gradient-primary: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+    --gradient-success: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+    --gradient-warning: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
+    --gradient-danger: linear-gradient(135deg, #ef4444 0%, #f43f5e 100%);
+    --gradient-info: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+    --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    --gradient-orange: linear-gradient(135deg, #f97316 0%, #f59e0b 100%);
+    --gradient-teal: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+    --gradient-rainbow: linear-gradient(135deg, #ef4444 0%, #f97316 25%, #f59e0b 50%, #10b981 75%, #3b82f6 100%);
 
-    /* Dark Theme Colors */
+    /* DARK THEME - HIGH CONTRAST COLORS */
     --dark-bg-primary: #0f172a;
     --dark-bg-secondary: #1e293b;
     --dark-bg-tertiary: #334155;
+    --dark-bg-quaternary: #475569;
     --dark-text-primary: #f8fafc;
-    --dark-text-secondary: #cbd5e1;
-    --dark-text-muted: #94a3b8;
-    --dark-glass: rgba(15, 23, 42, 0.8);
+    --dark-text-secondary: #e2e8f0;
+    --dark-text-muted: #cbd5e1;
+    --dark-text-light: #94a3b8;
+    --dark-glass: rgba(15, 23, 42, 0.9);
+    --dark-glass-light: rgba(30, 41, 59, 0.8);
 
-    /* Shadows - Perfect Depth */
-    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+    /* SHADOWS - ENHANCED DEPTH */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
     --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
-    --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.3);
+    --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.4);
+    --shadow-glow-purple: 0 0 20px rgba(124, 58, 237, 0.4);
+    --shadow-glow-orange: 0 0 20px rgba(245, 158, 11, 0.4);
+    --shadow-glow-green: 0 0 20px rgba(16, 185, 129, 0.4);
 
-    /* Spacing Scale */
+    /* SPACING SCALE */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
@@ -68,7 +104,7 @@
     --space-16: 4rem;
     --space-20: 5rem;
 
-    /* Border Radius */
+    /* BORDER RADIUS */
     --radius-sm: 0.375rem;
     --radius-md: 0.5rem;
     --radius-lg: 0.75rem;
@@ -77,7 +113,7 @@
     --radius-3xl: 2rem;
     --radius-full: 9999px;
 
-    /* Transitions */
+    /* TRANSITIONS */
     --transition-fast: 0.15s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
@@ -123,9 +159,9 @@ body::before {
     width: 100%;
     height: 100%;
     background:
-        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.2) 0%, transparent 50%);
     animation: backgroundShift 20s ease-in-out infinite;
     z-index: -1;
 }
@@ -160,7 +196,7 @@ body::before {
 .header-content {
     background: var(--bg-glass);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-3xl);
     padding: var(--space-16);
     box-shadow: var(--shadow-2xl);
@@ -174,8 +210,8 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: var(--gradient-primary);
+    height: 4px;
+    background: var(--gradient-rainbow);
     animation: shimmer 3s ease-in-out infinite;
 }
 
@@ -200,16 +236,16 @@ body::before {
     justify-content: center;
     gap: var(--space-6);
     animation: titleGlow 2s ease-in-out infinite alternate;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @keyframes titleGlow {
     from {
-        filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.3));
+        filter: drop-shadow(0 0 10px rgba(37, 99, 235, 0.4));
     }
 
     to {
-        filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.6));
+        filter: drop-shadow(0 0 20px rgba(37, 99, 235, 0.8));
     }
 }
 
@@ -234,9 +270,9 @@ body::before {
 .subtitle {
     font-size: 1.25rem;
     color: var(--text-secondary);
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: var(--space-12);
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-stats {
@@ -253,7 +289,7 @@ body::before {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
     border-radius: var(--radius-xl);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     transition: all var(--transition-normal);
     min-width: 120px;
     box-shadow: var(--shadow-lg);
@@ -289,7 +325,7 @@ body::before {
 .stat-label {
     font-size: 0.9rem;
     color: var(--text-muted);
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -303,6 +339,7 @@ body::before {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.7;
+    font-weight: 500;
 }
 
 /* Premium Navigation */
@@ -318,7 +355,7 @@ body::before {
 .nav-tab {
     background: var(--bg-glass);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     padding: var(--space-4) var(--space-6);
     border-radius: var(--radius-full);
     font-size: 1rem;
@@ -390,8 +427,9 @@ body::before {
     text-align: center;
     margin-bottom: var(--space-8);
     color: var(--text-primary);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: titleSlide 1s ease-out;
+    font-weight: 700;
 }
 
 @keyframes titleSlide {
@@ -414,7 +452,7 @@ body::before {
 .platform-container {
     background: var(--bg-glass);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius-3xl);
     padding: var(--space-12);
     box-shadow: var(--shadow-2xl);
@@ -433,8 +471,8 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: var(--gradient-primary);
+    height: 4px;
+    background: var(--gradient-rainbow);
     animation: shimmer 3s ease-in-out infinite;
 }
 
@@ -453,7 +491,7 @@ body::before {
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .roadmap-level::before {
@@ -552,6 +590,7 @@ body::before {
     color: var(--text-secondary);
     font-size: 1rem;
     line-height: 1.6;
+    font-weight: 500;
 }
 
 .level-duration {
@@ -629,7 +668,7 @@ body::before {
 }
 
 .explanation-card {
-    background: linear-gradient(135deg, #e6fffa 0%, #f0fff4 100%);
+    background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
     border-radius: var(--radius-lg);
     padding: var(--space-4);
     border-left: 4px solid var(--success);
@@ -653,6 +692,7 @@ body::before {
 .explanation-card p {
     color: var(--text-secondary);
     line-height: 1.7;
+    font-weight: 500;
 }
 
 .skill-card ul {
@@ -666,6 +706,7 @@ body::before {
     position: relative;
     padding-left: var(--space-6);
     transition: all var(--transition-fast);
+    font-weight: 500;
 }
 
 .skill-card li::before {
@@ -712,6 +753,7 @@ body::before {
     margin-bottom: var(--space-4);
     position: relative;
     z-index: 1;
+    font-weight: 600;
 }
 
 .learning-path ul {
@@ -726,6 +768,7 @@ body::before {
     position: relative;
     padding-left: var(--space-6);
     transition: all var(--transition-fast);
+    font-weight: 500;
 }
 
 .learning-path li::before {
@@ -758,7 +801,7 @@ body::before {
     padding: var(--space-8);
     background: var(--bg-secondary);
     border-radius: var(--radius-2xl);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -769,8 +812,8 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: var(--gradient-primary);
+    height: 4px;
+    background: var(--gradient-rainbow);
     animation: shimmer 3s ease-in-out infinite;
 }
 
@@ -816,7 +859,7 @@ body::before {
     color: inherit;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .extended-resource-card::before {
@@ -858,6 +901,7 @@ body::before {
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: var(--space-3);
+    font-weight: 500;
 }
 
 .resource-badge {
@@ -929,7 +973,7 @@ body::before {
     transition: all var(--transition-normal);
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 
 .tool-card::before {
@@ -988,6 +1032,7 @@ body::before {
     color: var(--text-secondary);
     margin-bottom: var(--space-4);
     line-height: 1.6;
+    font-weight: 500;
 }
 
 .tool-links {
@@ -1032,7 +1077,7 @@ body::before {
     box-shadow: var(--shadow-lg);
     transition: all var(--transition-normal);
     margin-bottom: var(--space-4);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
 }
@@ -1044,7 +1089,7 @@ body::before {
     left: 0;
     right: 0;
     height: 3px;
-    background: var(--gradient-primary);
+    background: var(--gradient-rainbow);
     animation: shimmer 3s ease-in-out infinite;
 }
 
@@ -1195,7 +1240,7 @@ body::before {
     }
 }
 
-/* Dark Theme Styles - PERFECT CONTRAST */
+/* DARK THEME - PERFECT CONTRAST & VISIBILITY */
 .dark-theme {
     background: var(--dark-bg-primary) !important;
     color: var(--dark-text-primary) !important;
@@ -1209,7 +1254,7 @@ body::before {
 .dark-theme .platform-container {
     background: var(--dark-glass) !important;
     color: var(--dark-text-primary) !important;
-    border-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .dark-theme .roadmap-level,
@@ -1252,7 +1297,7 @@ body::before {
 
 .dark-theme .section-title {
     color: var(--dark-text-primary) !important;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .dark-theme .section-description {
@@ -1296,6 +1341,22 @@ body::before {
 
 .dark-theme .resource-category-extended h3 {
     color: var(--dark-text-primary) !important;
+}
+
+.dark-theme .stat {
+    background: var(--dark-glass-light) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark-theme .nav-tab {
+    background: var(--dark-glass-light) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: var(--dark-text-primary) !important;
+}
+
+.dark-theme .nav-tab:hover,
+.dark-theme .nav-tab.active {
+    color: var(--text-white) !important;
 }
 
 /* Scrollbar Styling */
