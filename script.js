@@ -441,6 +441,10 @@ function setupComprehensiveFeatures() {
     setupProgressTracking();
     setupResourceFiltering();
     setupInteractiveElements();
+    setupPremiumAnimations();
+    setupParallaxEffects();
+    setupParticleSystem();
+    setupAdvancedHoverEffects();
 }
 
 // Search functionality
@@ -637,4 +641,280 @@ function setupInteractiveElements() {
 // Initialize comprehensive features
 setupComprehensiveFeatures();
 
-console.log('LearnAI Comprehensive Platform initialized successfully! 🚀');
+// Premium Animations
+function setupPremiumAnimations() {
+    // Staggered animation for cards
+    const cards = document.querySelectorAll('.extended-resource-card, .tool-card, .concept-card, .skill-card');
+    cards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px) scale(0.95)';
+        card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+        }, index * 100);
+    });
+
+    // Floating animation for icons
+    const icons = document.querySelectorAll('.level-icon, .tool-icon');
+    icons.forEach(icon => {
+        icon.style.animation = 'float 3s ease-in-out infinite';
+    });
+
+    // Add floating animation
+    const floatStyle = document.createElement('style');
+    floatStyle.textContent = `
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+    `;
+    document.head.appendChild(floatStyle);
+}
+
+// Parallax Effects
+function setupParallaxEffects() {
+    const parallaxElements = document.querySelectorAll('.header-content, .roadmap-level, .concept-card');
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const rate = scrolled * -0.5;
+
+        parallaxElements.forEach((element, index) => {
+            const speed = (index + 1) * 0.1;
+            element.style.transform = `translateY(${rate * speed}px)`;
+        });
+    });
+}
+
+// Particle System
+function setupParticleSystem() {
+    const particleContainer = document.createElement('div');
+    particleContainer.className = 'particle-container';
+    particleContainer.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+    `;
+
+    document.body.appendChild(particleContainer);
+
+    // Create particles
+    for (let i = 0; i < 50; i++) {
+        createParticle(particleContainer);
+    }
+}
+
+function createParticle(container) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.cssText = `
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: particleFloat ${Math.random() * 10 + 10}s linear infinite;
+        left: ${Math.random() * 100}%;
+        top: ${Math.random() * 100}%;
+    `;
+
+    container.appendChild(particle);
+
+    // Remove particle after animation
+    setTimeout(() => {
+        if (particle.parentNode) {
+            particle.parentNode.removeChild(particle);
+            createParticle(container);
+        }
+    }, (Math.random() * 10 + 10) * 1000);
+}
+
+// Add particle animation
+const particleStyle = document.createElement('style');
+particleStyle.textContent = `
+    @keyframes particleFloat {
+        0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(particleStyle);
+
+// Advanced Hover Effects
+function setupAdvancedHoverEffects() {
+    // Magnetic hover effect for cards
+    const cards = document.querySelectorAll('.extended-resource-card, .tool-card, .concept-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            card.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px) scale(1.05)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translate(0, 0) scale(1)';
+        });
+    });
+
+    // Ripple effect for buttons
+    const buttons = document.querySelectorAll('.nav-tab, .tool-link, .filter-btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', createRipple);
+    });
+}
+
+function createRipple(e) {
+    const button = e.currentTarget;
+    const ripple = document.createElement('span');
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = e.clientX - rect.left - size / 2;
+    const y = e.clientY - rect.top - size / 2;
+
+    ripple.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        left: ${x}px;
+        top: ${y}px;
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: ripple 0.6s linear;
+        pointer-events: none;
+    `;
+
+    button.style.position = 'relative';
+    button.style.overflow = 'hidden';
+    button.appendChild(ripple);
+
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Add ripple animation
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = `
+    @keyframes ripple {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(rippleStyle);
+
+// Enhanced scroll animations
+function setupScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+
+                // Add stagger effect for child elements
+                const children = entry.target.querySelectorAll('.extended-resource-card, .tool-card, .concept-card');
+                children.forEach((child, index) => {
+                    setTimeout(() => {
+                        child.style.opacity = '1';
+                        child.style.transform = 'translateY(0) scale(1)';
+                    }, index * 100);
+                });
+            }
+        });
+    }, observerOptions);
+
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll('.roadmap-level, .resource-category-extended, .tool-category, .concept-card');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px) scale(0.95)';
+        el.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+        observer.observe(el);
+    });
+}
+
+// Initialize scroll animations
+setupScrollAnimations();
+
+// Enhanced theme toggle with smooth transitions
+function enhanceThemeToggle() {
+    const themeToggle = document.querySelector('.theme-toggle');
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function () {
+            document.body.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+            document.body.classList.toggle('dark-theme');
+
+            // Add transition effect
+            const icon = this.querySelector('i');
+            icon.style.transform = 'rotate(360deg) scale(1.2)';
+            setTimeout(() => {
+                icon.style.transform = 'rotate(0deg) scale(1)';
+            }, 300);
+        });
+    }
+}
+
+// Initialize enhanced theme toggle
+enhanceThemeToggle();
+
+// Performance optimization
+function optimizePerformance() {
+    // Lazy load images
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+
+    // Debounce scroll events
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        scrollTimeout = setTimeout(() => {
+            // Scroll-based animations here
+        }, 16);
+    });
+}
+
+// Initialize performance optimizations
+optimizePerformance();
+
+console.log('LearnAI Premium Platform with Stunning Aesthetics initialized successfully! 🚀✨');
